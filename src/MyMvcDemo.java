@@ -8,6 +8,8 @@ public class MyMvcDemo {
 		StudentController controller =  new StudentController(student, studentView);
 		
 		controller.printStudentDetails();
+		
+		System.out.println("Hello!")
 
 	}
 
