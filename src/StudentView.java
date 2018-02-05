@@ -1,29 +1,49 @@
+package MVCdemo;
+
+import java.util.ArrayList;
 
 public class StudentView {
 	private Student student;
 	
-	public StudentView(Student student) {
-		this.student = student;
-	}
-	
+	//constructor
 	public StudentView() {
 		
 	}
-	
-	public void printStudentDetails(Student student) {
-		this.student = student;
-		printStudentDetails();
+	//constructor w/ student
+	public StudentView(Student std) {
+		student = std;
 	}
 	
-	public void setStudentDetails(Student student) {
-	
+	//setter
+	public void setStudent(Student std) {
+		student = std;
+	}
+	//getter
+	public  Student getStudent() {
+		return student;
 	}
 	
-	public void printStudentDetails() {
-		if (this.student == null) throw new IllegalArgumentException("student");		
-
-		System.out.println("Student's first name is " + this.student.getFirstName());
-		System.out.println("Student's last name is " + this.student.getLastName());
-		System.out.println("Student's id number is " + this.student.getIdNumber());
+	//method
+	public void printStudent(Student std) {
+		this.setStudent(std);
+		printStudent();
+	}
+	
+	public void printCourseList(ArrayList<CourseController> courseList) {
+		for(int i = courseList.size(); !(i == 0); i--) {
+			courseList.get(i).printCourse();
+		}
+	}
+	
+	//method w/ student
+	public void printStudent() {
+		if (student == null) {
+			throw new IllegalArgumentException("student");
+		}
+		else {
+			System.out.println(student.getFirst() + " " + student.getLast() + " : " + student.getID());
+			System.out.println("They are registered in the folloeing courses");
+			printCourseList(student.getCourses());
+		}
 	}
 }

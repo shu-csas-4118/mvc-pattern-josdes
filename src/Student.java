@@ -1,37 +1,60 @@
+package MVCdemo;
+
+import java.util.ArrayList;
 
 public class Student {
+	//state variables
 	private String firstName;
 	private String lastName;
+	private String email;
 	private int idNumber;
+	private ArrayList<CourseController> courses = new ArrayList<CourseController>();
 	
-	public Student(String firstName, String lastName, int idNumber) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
+	
+	//constructor
+	public Student(String fn, String ln, String em, int id, ArrayList<CourseController> course) {
+		firstName = fn;
+		lastName = ln;
+		email = em;
+		idNumber = id;
+		courses = course;
 	}
-	
-	public String getFirstName() {
-		return this.firstName;
+	public Student(String fn, String ln, String em, int id) {
+		firstName = fn;
+		lastName = ln;
+		email = em;
+		idNumber = id;
 	}
-	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	//getters
+	public String getFirst() {
+		return firstName;
 	}
-	
-	public String getLastName() {
-		return this.lastName;
+	public String getLast() {
+		return lastName;
 	}
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public String getEmail() {
+		return email;
 	}
-	
-	public int getIdNumber() {
-		return this.idNumber;
+	public int getID() {
+		return idNumber;
 	}
-	
-	public void setIdNumber(int idNumber) {
-		this.idNumber = idNumber;
-	}	
-	
+	public ArrayList<CourseController> getCourses() {
+		return courses;
+	}
+	//setters
+	public void setFirst(String fn) {
+		firstName = fn;
+	}
+	public void setLast(String ln) {
+		lastName = ln;
+	}
+	public void setEmail(String em) {
+		email = em;
+	}
+	public void setID(int id) {
+		idNumber = id;
+	}
+	public void setCourses(ArrayList<CourseController> course) {
+		courses = course;
+	}
 }

@@ -1,14 +1,15 @@
+package MVCdemo;
 
 public class StudentController {
 	private StudentView studentView;
-	private Student	student;
+	private Student student;
 	
-	public StudentController(Student student, StudentView studentView) {
-		this.student = student;
-		this.studentView = studentView;
+	public StudentController(Student std, StudentView stdView) {
+		studentView = stdView;
+		student = std;
 	}
 	
 	public void printStudentDetails() {
-		this.studentView.printStudentDetails(this.student);
+		studentView.printStudent(student);
 	}
 }
